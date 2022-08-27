@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql_starter
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: db
+      TZ: "Asia/Tokyo"
+    volumes:
+      - ./my.cnf:/etc/mysql/conf.d/my.cnf
+    ports:
+      - "3306:3306"
